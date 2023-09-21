@@ -35,9 +35,11 @@ RUN set -ex \
     iproute2 \
     ipset \
     iptables \
+    ip6tables \
     iptraf-ng \
     iputils \
     ipvsadm \
+    ipython \
     httpie \
     jq \
     libc6-compat \
@@ -62,6 +64,7 @@ RUN set -ex \
     strace \
     tcpdump \
     tcptraceroute \
+    tmux \
     tshark \
     util-linux \
     vim \
@@ -98,6 +101,7 @@ RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.
 RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 COPY zshrc .zshrc
 COPY motd motd
+COPY tmux.conf .tmux.conf
 
 # Fix permissions for OpenShift and tshark
 RUN chmod -R g=u /root
